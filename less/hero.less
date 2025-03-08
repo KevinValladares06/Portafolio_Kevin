@@ -1,0 +1,402 @@
+.Home{
+    min-height: 100vh;
+    background-image: url("/img/fondo.jpg");
+    background-size:cover;
+    background-position: center;
+    padding: 15px;
+}
+
+.Home .full-screen{
+    min-height: 100vh;
+}
+
+.Home .home-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.Home .home-content .block{
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-left: 35px;
+    border-left: 5px solid @secondary-color;
+    margin-top: 50px;
+}
+
+.Home .home-content .block h6{
+    color: @secondary-color;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.Home .home-content .block h1{
+    color: @secondary-color;
+    font-size: 55px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.Home .home-content .block h3{
+    color: @secondary-color;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.Home .home-content .block .cv-btn{
+    padding-top: 20px;
+}
+
+.Home .home-content .block .cv-btn a{
+    border-radius: 4px;
+    color: @secondary-color;
+    border: 1px solid @secondary-color;
+    padding: 12px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+
+.Home .home-content .block .cv-btn a:hover{
+    background-color: @secondary-color;
+    color: @secondary-color-dark;
+}
+
+.home-hero-moiuse-scroll{
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.mouse{
+    width: 25px;
+    height: 50px;
+    border: 2px solid @secondary-color;
+    border-radius: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mouse::before{
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top:7px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: @secondary-color;
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 0.5s infinite;
+    -webkit-animation: wheel 1.3s  infinite;
+}
+
+@keyframes wheel{
+    to{
+        opacity: 0;
+        top: 27px;;
+    }
+}
+
+@-webkit-keyframes wheel{
+    to {
+        opacity: 0;
+        top: 27px;
+    }
+}
+
+.social-media-sidebar{
+    position: fixed;
+    top:50%;
+    border: 2px solid @secondary-color-light;
+    border-left: 2px solid @secondary-color-light;
+    background: @secondary-color-dark;
+    box-shadow: @border-color-shadow 0 7px 29px 0;
+    transform: translateY(-50%);
+    right: 10px;
+    z-index: 1;
+}
+
+.social-media-item{
+    width: 50px;
+}
+
+.social-media-link{
+    width: 100%;
+    display: block;
+    padding: 12px;
+    border-bottom: 2px solid @secondary-color-light;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.social-media-link:hover{
+    background: @primary-color-dark;
+}
+
+.social-media-icon{
+    font-size: 20px;
+    color: @secondary-color;
+}
+
+.social-media-link:hover .social-media-icon{
+     color:@primary-color;
+}
+
+.about-me{
+    padding: 100px 15px;
+    background-color: @secondary-color;
+}
+
+.about-me .about-content .img{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+
+.about-me .about-content .img img{
+    width: 100%;
+    display: block;
+}
+
+.about-me .about-content .text{
+    flex: 0 0 66.67%;
+    max-width: 66.67%;
+    padding-left: 30px;
+}
+
+.about-me .about-content .text h4{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0 0 5px;
+    color: @secondary-color-dark;
+}
+
+.about-me .about-content .text h6{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 10px;
+    color: @secondary-color-dark;
+}
+
+.about-me .about-content .text h6 span{
+    color: @primary-color;
+}
+
+.about-me .about-content .text p{
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0 0 20px;
+    color: @primary-color-light;
+    line-height: 24px;
+}
+
+.about-me .about-content .text .social-link{
+    padding-top: 30px;
+}
+
+.about-me .about-content .text .social-link a{
+    height: 30px;
+    width: 30px;
+    background-color: @secondary-color-dark;
+    border-radius: 3px;
+    display: inline-block;
+    border: 1px solid @secondary-color-dark;
+    list-style: 28px;
+    text-align: center;
+    margin: 0 1px;
+   transition: all 0.5s ease;
+ }
+
+.about-me .about-content .text .social-link a:hover{
+    background-color: transparent;
+}
+
+.about-me .about-content .text .social-link a .fa-brands{
+    color: @secondary-color;
+    font-size: 12px;
+    transition: all 0.5s ease;
+
+}
+
+.about-me .about-content .text .social-link a:hover .fa-brands{
+    color: @secondary-color-dark;
+}
+
+.skills{
+    padding: 100px 15px;
+    background-color: @secondary-color;
+}
+
+.skills .skills-content{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 40px;
+}
+
+.skills .img{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.skills .img img{
+    width: 100%;
+    display: block;
+}
+
+.skills .skills-content .section-title p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: @primary-color-light;
+    margin: 15px 0;
+}
+
+.skills .skills-content .skill-box{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.skills .skills-content .skill-box h6{
+    font-size: 16px;
+    font-weight: 500;
+    color: @secondary-color-dark;
+    margin: 0 0 8px;
+} 
+
+.skills .skills-content .skill-box .skill-bar{
+    height: 5px;
+    background-color: @secondary-color-light;
+    position: relative;
+
+}
+
+.skills .skills-content .skill-box .skill-bar .skill-bar-in{
+    background-color: @primary-color;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.skills .skills-content .skill-box .skill-bar .skill-bar-in span{
+    color: @primary-color-light;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    right: 0;
+    top: -30px;
+}
+
+.contact-us{
+    padding: 100px 15px;
+    background-color: @secondary-color-one;
+}
+
+.contact-us .section-title h1::before{
+    left: 0%;
+}
+
+.contact-us .contact-form{
+    background-color: @secondary-color;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 50px;
+    border: 1px solid @secondary-color-light;
+}
+
+.contact-us .contact-form .form-header{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-us .contact-form .form-header h2{
+    font-size: 26px;
+    font-weight: 600;
+    color: @secondary-color-dark;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    
+}
+
+.contact-us .contact-form .form-header p{
+    font-weight: 400;
+    line-height: 24px;
+    color: @primary-color-light;
+    margin: 0;
+    font-family: "poppins", "sans-serif";
+    text-align: left;
+}
+
+.contact-us .contact-form .form-fields{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.contact-us .contact-form .input-field{
+    flex: 1;
+}
+
+.contact-us .contact-form .input-field.full-width{
+    flex: 1 0 100%;
+}
+
+.contact-us .contact-form .form-control{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid @primary-color-light-one;
+    font-family: "poppins", "sans-serif";
+}
+
+.contact-us .contact-form textarea.form-control{
+    height: 150px;
+}
+
+.contact-us .contact-form textarea.form-control::placeholder{
+    color: @primary-color-light;
+}
+
+.contact-us .contact-form .form-submit{
+    text-align: right;
+}
+
+.contact-us .contact-form .submit-button{
+    border-radius: 4px;
+    color: @secondary-color;
+    background-color: @primary-color;
+    border: 1px solid @secondary-color;
+    padding: 12px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}   
+
+.contact-us .contact-form .submit-button:hover{
+    background-color: @secondary-color-dark;
+    color: @secondary-color;
+}
