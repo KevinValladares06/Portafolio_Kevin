@@ -1,4 +1,4 @@
-import path, { resolve } from 'node:path'
+/*import path, { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import * as glob from 'glob'
 import htmlPurge from 'vite-plugin-purgecss'
@@ -7,7 +7,7 @@ const obtenerEntradas = () => {
     return Object.fromEntries(
         [
             ...glob.sync(
-                './*/.html',
+                './*//*.html',
                 {
                     ignore: [
                         './dist/**',
@@ -25,6 +25,7 @@ const obtenerEntradas = () => {
 }
 
 
+
 export default defineConfig({
     appType: 'mpa',
     base: 'process.env.DEPLOY_BASE_URL',
@@ -37,4 +38,11 @@ export default defineConfig({
     plugins: [
         htmlPurge({})
     ]
+});*/
+
+import {defineConfig} from 'vite'
+
+export default defineConfig({
+    appType: 'mpa',
+    base: process.env.DEPLOY_BASE_URL
 });
