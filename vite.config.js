@@ -1,48 +1,49 @@
-/*import path, { resolve } from 'node:path'
+import path, {resolve} from 'node:path'
 import { defineConfig } from 'vite'
 import * as glob from 'glob'
 import htmlPurge from 'vite-plugin-purgecss'
+import handlebars from 'vite-plugin-handlebars'
+import {ViteMinifyPlugin} from 'vite-plugin-minify'
 
-const obtenerEntradas = () => {
+const obtenerEntradas = ()=>{
     return Object.fromEntries(
         [
             ...glob.sync(
-                './*//*.html',
+                './**/*.html',
                 {
                     ignore: [
                         './dist/**',
-                        './node_modules/**',
+                        './node_modules/**'
                     ]
                 }
             ).map(
                 fileData => [
-                    fileData.slice(0, fileData-length - path.extname(fileData).length),
+                    fileData.slice(0, fileData.length - path.extname(fileData).length),
                     resolve(__dirname, fileData)
                 ]
             )
         ]
-    )
+    );
 }
-
 
 
 export default defineConfig({
     appType: 'mpa',
-    base: 'process.env.DEPLOY_BASE_URL',
+    base: process.env.DEPLOY_BASE_URL,
     build: {
         rollupOptions: {
-            input: obtenerEntradas(),
+            input: obtenerEntradas()
         },
         minify: true
     },
     plugins: [
-        htmlPurge({})
+        handlebars({
+            partialDirectory: resolve(__dirname, 'partials'),
+            context : (pagePath)=> {
+                return {}
+            }
+        }),
+        htmlPurge({}),
+        ViteMinifyPlugin()
     ]
-});*/
-
-import {defineConfig} from 'vite'
-
-export default defineConfig({
-    appType: 'mpa',
-    base: process.env.DEPLOY_BASE_URL
 });
