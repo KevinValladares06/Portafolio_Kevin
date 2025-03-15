@@ -1,4 +1,5 @@
-name: CICD de vite MPA a github pages
+name: CICD de Vite MPA a Github Pages
+
 on:
   push:
     branches: ["main"]
@@ -16,8 +17,8 @@ concurrency:
 jobs:
   deploy:
     environment:
-      name: GitHub Pages
-      url: ${{ steps.github_pages.outputs.url}}
+      name: github-pages
+      url: ${{ steps.github_pages.outputs.url }}
     runs-on: ubuntu-latest
     steps:
       - name: Clonar Repositorio
@@ -26,20 +27,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Instalar dependencias
+      - name: Instalar Dependencias
         run: npm install
-        #- name: QA
-        #  run: npm run test
-      - name: Verificacion de Env
-        run: echo "Deploy_BASE_URL -> %DEPLOY_BASE_URL"
-      - name: Copilar el Sitio
+      - name: Verificación de Env
+        run: echo "DEPLOY_BASE_URL -> $DEPLOY_BASE_URL"
+      - name: Compilar el Sitio
         run: npm run build
-      - name: Configurar entorno Github Pages
+      - name: Configurar Entorno Github Pages
         uses: actions/configure-pages@v5
-      - name: Upload del sitio compilado
+      - name: Upload del Sitio Compilado
         uses: actions/upload-pages-artifact@v3
         with:
           path: "./dist"
-      - name: Publicar el sitio
+      - name: Publicar el Sitio
         id: deployment
         uses: actions/deploy-pages@v4
